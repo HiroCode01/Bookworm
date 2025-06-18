@@ -2,7 +2,7 @@
 //  BookwormApp.swift
 //  Bookworm
 //
-//  Created by Fazliddin Abdazimov on 13/06/25.
+//  Created by HiRO on 13/06/25.
 //
 
 import SwiftData

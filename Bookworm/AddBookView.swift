@@ -2,7 +2,7 @@
 //  AddBookView.swift
 //  Bookworm
 //
-//  Created by Fazliddin Abdazimov on 16/06/25.
+//  Created by HiRO on 16/06/25.
 //
 
 import SwiftUI
