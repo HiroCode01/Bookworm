@@ -35,6 +35,9 @@ struct ContentView: View {
             }
             .navigationTitle("BookWorm")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add Book", systemImage: "plus") {
                         showingAddScreen.toggle()
