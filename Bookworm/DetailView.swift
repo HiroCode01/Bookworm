@@ -45,9 +45,9 @@ struct DetailView: View {
                 
                 RatingView(rating: .constant(book.rating))
                     .font(.title)
+                    .padding()
             
                 Text(book.date.formatted(date: .long, time: .shortened))
-                    .padding()
             }
             .padding()
         }

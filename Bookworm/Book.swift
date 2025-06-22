@@ -23,7 +23,7 @@ class Book {
         self.genre = genre
         self.review = review
         self.rating = rating
-        self.date = Date()
+        self.date = date
     }
 }
 
