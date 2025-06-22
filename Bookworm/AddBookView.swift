@@ -47,6 +47,7 @@ struct AddBookView: View {
                         Text("Save")
                     }
                 }
+                .disabled(title.isEmpty || author.isEmpty)
             }
             .navigationTitle("Add a book")
             .toolbar {
