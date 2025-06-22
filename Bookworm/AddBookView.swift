@@ -16,6 +16,7 @@ struct AddBookView: View {
     @State private var rating: Int = 3
     @State private var genre: String = "Fantasy"
     @State private var review: String = ""
+    @State private var date = Date.now
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
 
@@ -40,7 +41,7 @@ struct AddBookView: View {
                 
                 Section {
                     Button {
-                        let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating)
+                        let newBook = Book(title: title, author: author, genre: genre, review: review, rating: rating, date: date)
                         modelContext.insert(newBook)
                         dismiss()
                     }label: {

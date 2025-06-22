@@ -31,16 +31,25 @@ struct DetailView: View {
                     .clipShape(.capsule)
                     .offset(x: -5, y: -5)
             }
+            VStack {
+                Text(book.author)
+                    .font(.title.bold())
+                    .foregroundStyle(.secondary)
+                
+                Text(book.review)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .background(.gray.opacity(0.2))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .font(.title3)
+                
+                RatingView(rating: .constant(book.rating))
+                    .font(.title)
             
-            Text(book.author)
-                .font(.title)
-                .foregroundStyle(.secondary)
-
-            Text(book.review)
-                .padding()
-
-            RatingView(rating: .constant(book.rating))
-                .font(.largeTitle)
+                Text(book.date.formatted(date: .long, time: .shortened))
+                    .padding()
+            }
+            .padding()
         }
         .navigationTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
@@ -70,7 +79,7 @@ struct DetailView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Book.self, configurations: config)
-        let example = Book(title: "Test Book", author: "Test Author", genre: "Horror", review: "Amazing book", rating: 4)
+        let example = Book(title: "Test Book", author: "Test Author", genre: "Horror", review: "Amazing book", rating: 4, date: Date.now)
         
         return DetailView(book: example)
             .modelContainer(container)
